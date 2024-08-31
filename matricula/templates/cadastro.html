@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'cadastro.css' %}">
+{% endblock %}
+
+{% block main %}
+
+    <h2>Matricula de Aluno</h2>
+
+    <form method="post">
+        {% csrf_token %}
+    {{form.as_p}}
+
+        <button type="submit">Cadastro</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'index.css' %}" >
+{% endblock %}
+
+{% block main %}
+
+<a class="cadastrar" href="/cadastro">Cadastrar</a>
+
+<ul>
+    {% for aluno in alunos %}
+        <li>
+            <h3>{{ aluno.nome }}</h3>
+            <p>{{ aluno.email }}</p>
+            <p>{{ aluno.curso }}</p>
+            <p>{{ aluno.endereco }}</p>
+            <p>{{ aluno.cidade }}</p>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
